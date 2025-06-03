@@ -1,14 +1,13 @@
 ---
-import SimpleButton from "./SimpleButton.astro";
-import GroupedButtons from "./GroupedButtons.astro";
-import HomeIcon from "./icons/HomeIcon.astro";
-import PortfolioIcon from "./icons/PortfolioIcon.astro";
-import SendIcon from "./icons/SendIcon.astro";
-import MoonIcon from "./icons/MoonIcon.astro";
-import SunIcon from "./icons/SunIcon.astro";
-import LinkedInIcon from "./icons/LinkedInIcon.astro";
-import GitHubIcon from "./icons/GitHubIcon.astro";
-import LinkButon from "./LinkButon.astro";
+import GroupedButtons from "./../GroupedButtons.astro";
+import HomeIcon from "./../icons/HomeIcon.astro";
+import PortfolioIcon from "./../icons/PortfolioIcon.astro";
+import SendIcon from "./../icons/SendIcon.astro";
+import MoonIcon from "./../icons/MoonIcon.astro";
+import SunIcon from "./../icons/SunIcon.astro";
+import LinkedInIcon from "./../icons/LinkedInIcon.astro";
+import GitHubIcon from "./../icons/GitHubIcon.astro";
+import LinkButton from "./../LinkButton.astro";
 
 const themes = [
   { name: "Light", icon: SunIcon, value: "light" },
@@ -33,18 +32,18 @@ const logo = Astro.props.logo ?? "/SCrbnll-Logo.png";
   </div>
 
   <nav class="flex-1 flex flex-col gap-4 p-4 text-sm">
-    <SimpleButton href="/">
+    <LinkButton href="/#" title="Home">
       <HomeIcon slot="before" />
       Home
-    </SimpleButton>
-    <SimpleButton href="#Portfolio">
+    </LinkButton>
+    <LinkButton href="#Portfolio" title="Portfolio">
       <PortfolioIcon slot="before" />
       Portfolio
-    </SimpleButton>
-    <SimpleButton href="#Contact">
+    </LinkButton>
+    <LinkButton href="#Contact" title="Contact">
       <SendIcon slot="before" />
       Contact
-    </SimpleButton>
+    </LinkButton>
   </nav>
 
   <div class="p-4 border-t flex flex-col gap-4 text-sm">
@@ -79,12 +78,12 @@ const logo = Astro.props.logo ?? "/SCrbnll-Logo.png";
   </div>
 
   <div class="p-4 border-t flex gap-4 justify-center">
-      <LinkButon href="https://www.linkedin.com/in/samuu-crbnll/" title="LinkedIn">
+      <LinkButton href="https://www.linkedin.com/in/samuu-crbnll/" title="LinkedIn" target="_blank">
           <LinkedInIcon />
-      </LinkButon>
-    <LinkButon href="https://github.com/SCrbnll" title="GitHub">
+      </LinkButton>
+    <LinkButton href="https://github.com/SCrbnll" title="GitHub" target="_blank">
         <GitHubIcon />
-    </LinkButon>
+    </LinkButton>
   </div>
 </aside>
 

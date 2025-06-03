@@ -2,16 +2,18 @@
 interface Props {
     href: string
     title: string
+    target?: string
 }
 
-const { href, title } = Astro.props
+const { href, title, target } = Astro.props
 ---
 
-<a  target="_blank"
+<a  target={target}
     title={title}
     href={href}
     role="link"
     class="bg-black text-white px-4 py-2 rounded-xl transition-colors duration-200 hover:bg-white hover:text-black flex items-center justify-start gap-5">
+    <slot name="before" />
     <slot />
      
 </a>

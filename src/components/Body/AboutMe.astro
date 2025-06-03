@@ -1,0 +1,100 @@
+---
+import { SOCIALS } from '../../utils/constants'
+import BlogIcon from '../icons/BlogIcon.astro';
+import PortfolioIcon from '../icons/PortfolioIcon.astro';
+import SendIcon from '../icons/SendIcon.astro';
+import LinkButton from '../LinkButton.astro';
+
+interface Props {
+  myself: string;
+}
+
+const myself = Astro.props.myself;
+---
+
+<main class="w-full bg-gray-100 text-black shadow p-10">
+  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 px-4 items-center">
+    <div class="flex justify-center md:justify-start">
+      <img 
+        src={myself} 
+        alt="Foto de perfil de Samuel Carbonell Gonçalves" 
+        class="w-50 h-50 md:w-80 md:h-80 mb-4 sm:mb-0 rounded-full object-cover shadow-lg lg:ml-20"
+      />
+    </div>
+
+    <div class="text-center md:text-left">
+      <h1 class="text-3xl md:text-4xl font-bold">Samuel Carbonell Gonçalves</h1>
+
+      <div class="text-xl md:text-2xl font-semibold h-10 mt-2">
+        <span id="typing-text" class="border-r-2 border-black animate-pulse"></span>
+      </div>
+
+      <p class="mt-4 text-base md:text-lg max-w-xl mx-auto md:mx-0">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima harum quas at aliquid quos eligendi eum qui in, optio rerum sequi, odit blanditiis deleniti facere ullam officiis exercitationem sint eveniet.
+      </p>
+
+      <div class="mt-6 flex flex-wrap flex-row justify-center md:justify-start gap-4">
+        {
+            SOCIALS.map((social) => {
+                const Icon = social.icon;
+                return (
+                <LinkButton href={social.url} title={social.name} target='_blank'>
+                    <Icon />
+                </LinkButton>
+                )
+            })
+        }
+      </div>
+      <div class="mt-6 grid grid-cols-1 lg:grid-cols-3 gap-4 w-full">
+        <LinkButton href="#Portfolio" title="Portfolio">
+            <PortfolioIcon slot="before" />
+            <span>View my work</span>
+        </LinkButton>
+        <LinkButton href="#Contact" title="Contact">
+            <SendIcon slot="before" />
+            <span>Get in Touch</span>
+        </LinkButton>
+        <LinkButton href="/blog" title="Resume">
+            <BlogIcon slot="before" />
+            <span>Beyond Code</span>
+        </LinkButton>
+        </div>
+    </div>
+
+  </div>
+</main>
+
+<script is:inline>
+  const roles = [
+    "FullStack Developer",
+    "Frontend Specialist",
+    "Backend Enthusiast",
+    "JavaScript Lover",
+  ];
+
+  let currentIndex = 0;
+  const typingEl = document.getElementById("typing-text");
+
+  function typeWriter(text, i = 0) {
+    if (!typingEl) return;
+    if (i < text.length) {
+      typingEl.textContent = text.substring(0, i + 1);
+      setTimeout(() => typeWriter(text, i + 1), 100);
+    } else {
+      setTimeout(() => deleteWriter(text), 1500);
+    }
+  }
+
+  function deleteWriter(text, i = text.length) {
+    if (!typingEl) return;
+    if (i >= 0) {
+      typingEl.textContent = text.substring(0, i);
+      setTimeout(() => deleteWriter(text, i - 1), 50);
+    } else {
+      currentIndex = (currentIndex + 1) % roles.length;
+      typeWriter(roles[currentIndex]);
+    }
+  }
+  // Inicia animación
+  typeWriter(roles[currentIndex]);
+</script>

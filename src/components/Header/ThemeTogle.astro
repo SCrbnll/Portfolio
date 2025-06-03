@@ -1,6 +1,6 @@
 ---
-import MoonIcon from "./icons/MoonIcon.astro";
-import SunIcon from "./icons/SunIcon.astro";
+import MoonIcon from "./../icons/MoonIcon.astro";
+import SunIcon from "./../icons/SunIcon.astro";
 ---
 
 <button
@@ -20,15 +20,25 @@ import SunIcon from "./icons/SunIcon.astro";
   const btn = document.getElementById("theme-toggle-btn");
   const sun = document.getElementById("sun-icon");
   const moon = document.getElementById("moon-icon");
+  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
 
   function getSavedTheme() {
-    return localStorage.getItem("theme") || "dark";
+    return localStorage.getItem("theme") || "system";
+  }
+
+  function getResolvedTheme(theme) {
+    if (theme === "system") {
+      localStorage.setItem("theme", prefersDark.matches ? "dark" : "light");
+      return prefersDark.matches ? "dark" : "light";
+    }
+    return theme;
   }
 
   function setThemeAttr(theme) {
-    document.body.setAttribute("data-theme", theme);
-    sun.classList.toggle("hidden", theme !== "light");
-    moon.classList.toggle("hidden", theme !== "dark");
+    const resolved = getResolvedTheme(theme);
+    document.body.setAttribute("data-theme", resolved);
+    sun.classList.toggle("hidden", resolved !== "light");
+    moon.classList.toggle("hidden", resolved !== "dark");
   }
 
   function toggleTheme() {
@@ -37,6 +47,12 @@ import SunIcon from "./icons/SunIcon.astro";
     localStorage.setItem("theme", next);
     setThemeAttr(next);
   }
+
+   prefersDark.addEventListener("change", () => {
+    if (getSavedTheme() === "system") {
+      setThemeAttr("system");
+    }
+  });
 
   setThemeAttr(getSavedTheme());
   btn.addEventListener("click", toggleTheme);
