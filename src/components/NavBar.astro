@@ -1,0 +1,32 @@
+---
+import MenuIcon from "./icons/MenuIcon.astro";
+import XIcon from "./icons/XIcon.astro";
+import ThemeTogle from "./ThemeTogle.astro";
+import LanguageSelector from "./LanguageSelector.astro";
+import HeaderAside from "./HeaderAside.astro";
+
+const logo = Astro.props.logo ?? "/SCrbnll-Logo.png";
+---
+
+<div id="menuOverlay" class="fixed inset-0 bg-black/20 backdrop-blur-sm hidden z-40 transition-opacity duration-300"></div>
+
+<header class="w-full bg-gray-400 text-white shadow fixed top-0 left-0 z-50 ">
+  <div class="max-w-6xl mx-auto flex justify-between items-center px-6 py-4">
+    <img src={logo} alt="Logo" class="h-14 sm:h-18" />
+    <nav class="hidden md:flex items-center gap-12 font-medium">
+        <a href="/" class="flex items-center hover:text-black transition-colors duration-200">Home</a>
+        <a href="#Portfolio" class="flex items-center hover:text-black transition-colors duration-200">Portfolio</a>
+        <a href="#Contact" class="flex items-center hover:text-black transition-colors duration-200">Contact</a>
+        <div class="flex items-center gap-4">
+            <ThemeTogle />
+            <LanguageSelector />
+        </div>
+    </nav>
+    <button id="toggleMenu" class="md:hidden z-[999]">
+      <span id="menuIcon"><MenuIcon /></span>
+      <span id="closeIcon" class="hidden"><XIcon /></span>
+    </button>
+  </div>
+</header>
+
+<HeaderAside logo={logo} />

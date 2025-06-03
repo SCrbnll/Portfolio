@@ -1,0 +1,104 @@
+---
+const languages = [
+  { code: "es", name: "Spanish", flag: "/flags/es.svg" },
+  { code: "en", name: "English", flag: "/flags/en.svg" },
+];
+---
+
+<div class="relative inline-block text-left">
+  <button
+    id="lang-toggle"
+    type="button"
+    class="bg-black text-white px-4 py-2 rounded-xl flex items-center gap-2 hover:bg-white hover:text-black transition-colors"
+  >
+    <img
+      id="selected-flag"
+      src={languages[0].flag}
+      alt={languages[0].name}
+      class="w-5 h-5"
+    />
+    <span id="selected-name">{languages[0].name}</span>
+    <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+      <path
+        d="M5.25 7.75L10 12.5l4.75-4.75"
+        stroke="currentColor"
+        stroke-width="1.5"
+        fill="none"
+        stroke-linecap="round"
+        stroke-linejoin="round"></path>
+    </svg>
+  </button>
+
+  <div
+    id="lang-dropdown"
+    class="absolute mt-2 w-full bg-white border border-gray-200 rounded shadow z-10 hidden"
+  >
+    {
+      languages.map((lang) => (
+        <button
+          type="button"
+          class="flex items-center gap-2 w-full px-4 py-2 hover:bg-gray-100 text-black"
+          data-lang-code={lang.code}
+          data-lang-name={lang.name}
+          data-lang-flag={lang.flag}
+        >
+          <img src={lang.flag} alt={lang.name} class="w-5 h-5" />
+          <span>{lang.name}</span>
+        </button>
+      ))
+    }
+  </div>
+</div>
+
+<script is:inline>
+  const toggleBtn = document.getElementById("lang-toggle");
+  const dropdown = document.getElementById("lang-dropdown");
+  const nameEl = document.getElementById("selected-name");
+  const flagEl = document.getElementById("selected-flag");
+
+  const LANG_KEY = "preferred-language";
+
+  function setLanguage(name, flag, code) {
+    nameEl.textContent = name;
+    flagEl.src = flag;
+    flagEl.alt = name;
+    localStorage.setItem(LANG_KEY, JSON.stringify({ name, flag, code }));
+    dropdown.classList.add("hidden");
+    // Aquí podrías emitir un evento o cambiar idioma con i18n
+  }
+
+  function loadLanguage() {
+    const saved = localStorage.getItem(LANG_KEY);
+    if (saved) {
+      try {
+        const { name, flag } = JSON.parse(saved);
+        nameEl.textContent = name;
+        flagEl.src = flag;
+        flagEl.alt = name;
+      } catch (e) {
+        console.error("Idioma guardado no válido.");
+      }
+    }
+  }
+
+  toggleBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    dropdown.classList.toggle("hidden");
+  });
+
+  document.querySelectorAll("#lang-dropdown button").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const name = btn.dataset.langName;
+      const flag = btn.dataset.langFlag;
+      const code = btn.dataset.langCode;
+      setLanguage(name, flag, code);
+    });
+  });
+
+  document.addEventListener("click", () => dropdown.classList.add("hidden"));
+  document.addEventListener("astro:after-swap", () =>
+    dropdown.classList.add("hidden")
+  );
+
+  loadLanguage();
+</script>

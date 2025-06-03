@@ -1,0 +1,161 @@
+---
+import SimpleButton from "./SimpleButton.astro";
+import GroupedButtons from "./GroupedButtons.astro";
+import HomeIcon from "./icons/HomeIcon.astro";
+import PortfolioIcon from "./icons/PortfolioIcon.astro";
+import SendIcon from "./icons/SendIcon.astro";
+import MoonIcon from "./icons/MoonIcon.astro";
+import SunIcon from "./icons/SunIcon.astro";
+import LinkedInIcon from "./icons/LinkedInIcon.astro";
+import GitHubIcon from "./icons/GitHubIcon.astro";
+import LinkButon from "./LinkButon.astro";
+
+const themes = [
+  { name: "Light", icon: SunIcon, value: "light" },
+  { name: "Dark", icon: MoonIcon, value: "dark" },
+];
+
+const languages = [
+  { code: "es", name: "Spanish", flag: "/flags/es.svg" },
+  { code: "en", name: "English", flag: "/flags/en.svg" },
+];
+
+const logo = Astro.props.logo ?? "/SCrbnll-Logo.png";
+---
+
+<aside
+  id="sideMenu"
+  class="fixed top-0 left-0 w-64 h-full bg-gray-400 shadow-lg transform -translate-x-full transition-transform duration-300 z-[60] flex flex-col"
+>
+  <div class="p-4 border-b">
+    <!-- <img src={logo} alt="Logo" class="h-12" /> -->
+    <h1>Samuel Carbonell</h1>
+  </div>
+
+  <nav class="flex-1 flex flex-col gap-4 p-4 text-sm">
+    <SimpleButton href="/">
+      <HomeIcon slot="before" />
+      Home
+    </SimpleButton>
+    <SimpleButton href="#Portfolio">
+      <PortfolioIcon slot="before" />
+      Portfolio
+    </SimpleButton>
+    <SimpleButton href="#Contact">
+      <SendIcon slot="before" />
+      Contact
+    </SimpleButton>
+  </nav>
+
+  <div class="p-4 border-t flex flex-col gap-4 text-sm">
+    <GroupedButtons title="Theme">
+      {
+        themes.map((theme) => (
+          <button
+            type="button"
+            data-theme={theme.value}
+            id="theme-toggle-btn-aside"
+            class="bg-black text-white px-2 py-1 rounded hover:bg-white hover:text-black transition-colors flex items-center gap-2 text-xs"
+          >
+            <theme.icon class="w-4 h-4" />
+          </button>
+        ))
+      }
+    </GroupedButtons>
+
+    <GroupedButtons title="Language">
+      {
+        languages.map((lang) => (
+          <button
+            type="button"
+            data-lang={lang.code}
+            class="bg-black text-white px-3 py-2 rounded hover:bg-white hover:text-black transition-colors flex items-center gap-2 text-xs"
+          >
+            <img src={lang.flag} alt={lang.name} class="w-4 h-4" />
+          </button>
+        ))
+      }
+    </GroupedButtons>
+  </div>
+
+  <div class="p-4 border-t flex gap-4 justify-center">
+      <LinkButon href="https://www.linkedin.com/in/samuu-crbnll/" title="LinkedIn">
+          <LinkedInIcon />
+      </LinkButon>
+    <LinkButon href="https://github.com/SCrbnll" title="GitHub">
+        <GitHubIcon />
+    </LinkButon>
+  </div>
+</aside>
+
+<script type="module">
+  /* ==== MENU ====*/
+  const toggleBtn = document.getElementById("toggleMenu");
+  const menu = document.getElementById("sideMenu");
+  const overlay = document.getElementById("menuOverlay");
+  const menuIcon = document.getElementById("menuIcon");
+  const closeIcon = document.getElementById("closeIcon");
+  const openMenu = () => {
+    menu.classList.remove("-translate-x-full");
+    overlay.classList.remove("hidden");
+    menuIcon.classList.add("hidden");
+    closeIcon.classList.remove("hidden");
+  };
+  const closeMenu = () => {
+    menu.classList.add("-translate-x-full");
+    overlay.classList.add("hidden");
+    menuIcon.classList.remove("hidden");
+    closeIcon.classList.add("hidden");
+  };
+  toggleBtn.addEventListener("click", () => {
+    const isOpen = !menu.classList.contains("-translate-x-full");
+    isOpen ? closeMenu() : openMenu();
+  });
+  overlay.addEventListener("click", closeMenu);
+
+  /* ==== THEME ====*/
+  const themeButtons = document.querySelectorAll("#theme-toggle-btn-aside");
+  function getSavedTheme() {
+    return localStorage.getItem("theme") || "system";
+  }
+  function setThemeAttr(theme) {
+    document.body.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+    themeButtons.forEach((btn) => {
+      const btnTheme = btn.getAttribute("data-theme");
+      btn.classList.toggle("ring-2", btnTheme === theme);
+      btn.classList.toggle("ring-offset-2", btnTheme === theme);
+      btn.classList.toggle("ring-white", btnTheme === theme);
+    });
+  }
+
+  themeButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const selectedTheme = btn.getAttribute("data-theme");
+      setThemeAttr(selectedTheme);
+    });
+  });
+  setThemeAttr(getSavedTheme());
+
+  /* ==== LANGUAGES ==== */
+  const langButtons = document.querySelectorAll("button[data-lang]");
+  function getSavedLang() {
+    return localStorage.getItem("lang") || "es";
+  }
+  function setLangAttr(lang) {
+    localStorage.setItem("lang", lang);
+    langButtons.forEach((btn) => {
+      const btnLang = btn.getAttribute("data-lang");
+      btn.classList.toggle("ring-2", btnLang === lang);
+      btn.classList.toggle("ring-offset-2", btnLang === lang);
+      btn.classList.toggle("ring-white", btnLang === lang);
+    });
+  }
+  langButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const selectedLang = btn.getAttribute("data-lang");
+      setLangAttr(selectedLang);
+    });
+  });
+  setLangAttr(getSavedLang());
+</script>

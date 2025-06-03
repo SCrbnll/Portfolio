@@ -1,0 +1,44 @@
+---
+import MoonIcon from "./icons/MoonIcon.astro";
+import SunIcon from "./icons/SunIcon.astro";
+---
+
+<button
+  type="button"
+  id="theme-toggle-btn"
+  class="bg-black text-white px-2 py-2 rounded-xl transition-colors duration-300 hover:bg-white hover:text-black"
+>
+  <span id="sun-icon" class="hidden">
+    <SunIcon class="size-5" />
+  </span>
+  <span id="moon-icon" class="hidden">
+    <MoonIcon class="size-5" />
+  </span>
+</button>
+
+<script is:inline>
+  const btn = document.getElementById("theme-toggle-btn");
+  const sun = document.getElementById("sun-icon");
+  const moon = document.getElementById("moon-icon");
+
+  function getSavedTheme() {
+    return localStorage.getItem("theme") || "dark";
+  }
+
+  function setThemeAttr(theme) {
+    document.body.setAttribute("data-theme", theme);
+    sun.classList.toggle("hidden", theme !== "light");
+    moon.classList.toggle("hidden", theme !== "dark");
+  }
+
+  function toggleTheme() {
+    const current = getSavedTheme();
+    const next = current === "dark" ? "light" : "dark";
+    localStorage.setItem("theme", next);
+    setThemeAttr(next);
+  }
+
+  setThemeAttr(getSavedTheme());
+  btn.addEventListener("click", toggleTheme);
+</script>
+
