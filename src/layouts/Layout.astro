@@ -1,6 +1,5 @@
 ---
 // import Footer from "../components/Footer.astro"
-import AboutMe from "../components/Body/AboutMe.astro"
 import NavBar from "../components/Header/NavBar.astro"
 
 interface Props {
@@ -25,7 +24,7 @@ const { description, title } = Astro.props
 
     <!-- Main -->
     <main class="pt-30 sm:pt-40 px-6 sm:px-0 mx-auto">
-      <AboutMe myself="src/assets/Me.jpg"/>
+      <slot />
     </main>
 
     <!-- Footer -->

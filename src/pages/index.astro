@@ -1,6 +1,22 @@
 ---
-import Layout from '../layouts/Layout.astro';
 import '../styles/global.css';
+import Layout from '../layouts/Layout.astro';
+import AboutMe from '../components/Body/AboutMe.astro';
+import StatsCard from '../components/Body/StatsCard.astro';
+import StatsGrid from '../components/Body/StatsGrid.astro';
+import { STATS } from '../utils/constants';
 ---
 
-<Layout title='Samuel Carbonell Portfolio' description='Descripción de mi sitio Astro' />
+<Layout title='Samuel Carbonell Portfolio' description='Descripción de mi sitio Astro'>
+    <AboutMe myself="src/assets/Me.jpg"/>
+    <StatsGrid>
+    {
+        STATS.map(({ icon, title, align, items }) => {
+        const Icon = icon;
+        return (
+            <StatsCard icon={Icon} title={title} align={align} items={items} />
+        );
+        })
+    }
+    </StatsGrid>
+</Layout>
