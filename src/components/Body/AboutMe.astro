@@ -25,7 +25,7 @@ const myself = Astro.props.myself;
       <h1 class="text-3xl md:text-4xl font-bold">Samuel Carbonell Gonçalves</h1>
 
       <div class="text-xl md:text-2xl font-semibold h-10 mt-2">
-        <span id="typing-text" class="border-r-2 border-black animate-pulse"></span>
+        <span id="typing-text" class="animate-pulse">FullStack Developer</span>
       </div>
 
       <p class="mt-4 text-base md:text-lg max-w-xl mx-auto md:mx-0">
@@ -63,37 +63,3 @@ const myself = Astro.props.myself;
   </div>
 </section>
 
-<script is:inline>
-  const roles = [
-    "FullStack Developer",
-    "Frontend Specialist",
-    "Backend Enthusiast",
-    "JavaScript Lover",
-  ];
-
-  let currentIndex = 0;
-  const typingEl = document.getElementById("typing-text");
-
-  function typeWriter(text, i = 0) {
-    if (!typingEl) return;
-    if (i < text.length) {
-      typingEl.textContent = text.substring(0, i + 1);
-      setTimeout(() => typeWriter(text, i + 1), 100);
-    } else {
-      setTimeout(() => deleteWriter(text), 1500);
-    }
-  }
-
-  function deleteWriter(text, i = text.length) {
-    if (!typingEl) return;
-    if (i >= 0) {
-      typingEl.textContent = text.substring(0, i);
-      setTimeout(() => deleteWriter(text, i - 1), 50);
-    } else {
-      currentIndex = (currentIndex + 1) % roles.length;
-      typeWriter(roles[currentIndex]);
-    }
-  }
-  // Inicia animación
-  typeWriter(roles[currentIndex]);
-</script>
