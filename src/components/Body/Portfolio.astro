@@ -1,0 +1,79 @@
+---
+import AboutMe from "./AboutMe.astro";
+import Projects from "./Projects.astro";
+import { PROJECTS } from "../../constants/projects";
+import Experience from "./Experience.astro";
+import { EXPERIENCES } from "../../constants/experiences";
+
+interface Props {
+  title: string;
+  subtitle: string;
+}
+
+const { title, subtitle } = Astro.props;
+
+const tabs = [
+  { id: "projects", label: "Projects" },
+  { id: "experience", label: "Experience" },
+  { id: "skills", label: "Skills" },
+];
+
+---
+
+<section class="max-w-6xl mx-auto py-30 md:py-35 px-4 md:px-0" id="Portfolio">
+  <div class="text-center mb-6">
+    <h2 class="text-3xl font-bold text-white">{title}</h2>
+    <p class="text-white">{subtitle}</p>
+  </div>
+
+  <div class="flex justify-center gap-4 mb-8" id="portfolio-tabs">
+    {tabs.map((tab) => (
+      <button
+        class="tab-btn px-4 py-2 rounded-full font-medium transition-colors bg-gray-200 text-black hover:bg-gray-300"
+        data-tab={tab.id}
+      >
+        {tab.label}
+      </button>
+    ))}
+  </div>
+
+  <div id="tab-content">
+    <div id="projects" class="tab-panel"><Projects projects={PROJECTS}/></div>
+    <div id="experience" class="tab-panel hidden"><Experience experiences={EXPERIENCES}/></div>
+    <div id="skills" class="tab-panel hidden"><AboutMe myself="src/assets/Me.jpg"/></div>
+  </div>
+</section>
+
+<style>
+  .hidden {
+    display: none;
+  }
+</style>
+
+<script is:inline>
+  const buttons = document.querySelectorAll(".tab-btn");
+  const panels = document.querySelectorAll(".tab-panel");
+
+  function showTab(id) {
+    panels.forEach((panel) => {
+      panel.classList.toggle("hidden", panel.id !== id);
+    });
+
+    buttons.forEach((btn) => {
+      const isActive = btn.dataset.tab === id;
+      btn.classList.toggle("bg-black", isActive);
+      btn.classList.toggle("text-white", isActive);
+      btn.classList.toggle("bg-gray-200", !isActive);
+      btn.classList.toggle("text-black", !isActive);
+    });
+  }
+
+  showTab("projects");
+
+  buttons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const tabId = btn.dataset.tab;
+      showTab(tabId);
+    });
+  });
+</script>

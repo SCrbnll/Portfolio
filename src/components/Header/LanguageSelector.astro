@@ -1,8 +1,5 @@
 ---
-const languages = [
-  { code: "es", name: "Spanish", flag: "/flags/es.svg" },
-  { code: "en", name: "English", flag: "/flags/en.svg" },
-];
+import { LANGUAGES } from "../../constants/global";
 ---
 
 <div class="relative inline-block text-left">
@@ -13,8 +10,8 @@ const languages = [
   >
     <img
       id="selected-flag"
-      src={languages[0].flag}
-      alt={languages[0].name}
+      src={LANGUAGES[0].flag}
+      alt={LANGUAGES[0].name}
       class="w-5 h-5"
     />
     <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
@@ -33,7 +30,7 @@ const languages = [
     class="absolute right-0 mt-2 w-28 bg-white border border-gray-200 rounded-xl shadow z-10 hidden"
   >
     {
-      languages.map((lang) => (
+      LANGUAGES.map((lang) => (
         <button
           type="button"
           class="flex items-center gap-2 px-4 py-2 hover:bg-gray-100 text-black w-full text-left rounded-xl"

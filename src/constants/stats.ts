@@ -1,35 +1,6 @@
-import CVIcon from "../components/icons/CVIcon.astro";
-import GitHubIcon from "../components/icons/GitHubIcon.astro";
 import JobIcon from "../components/icons/JobIcon.astro";
 import LanguageIcon from "../components/icons/LanguageIcon.astro";
-import LinkedInIcon from "../components/icons/LinkedInIcon.astro";
 import SchoolIcon from "../components/icons/SchoolIcon.astro";
-
-export const SITE_NAME = "Samuel Carbonell";
-export const DEFAULT_LANG = "es";
-
-export const LANGUAGES = [
-  { code: "es", name: "Español", flag: "/flags/es.svg" },
-  { code: "en", name: "English", flag: "/flags/en.svg" },
-];
-
-export const SOCIALS = [
-  {
-    name: "GitHub",
-    url: "https://github.com/SCrbnll",
-    icon: GitHubIcon,
-  },
-  {
-    name: "LinkedIn",
-    url: "https://www.linkedin.com/in/samuu-crbnll/",
-    icon: LinkedInIcon,
-  },
-  {
-    name: "CV",
-    url: "https://github.com/SCrbnll/SCrbnllDev/blob/main/public/Curriculum%20Vitae.pdf",
-    icon: CVIcon,
-  }
-];
 
 export const STATS = [
   {
@@ -37,7 +8,7 @@ export const STATS = [
     title: "< 1 year of experience",
     align: "center",
     items: [
-      { title: "Frontend Developer", value: "4 months" },
+      { title: "Frontend Developer", value: "8 months" },
       { title: "Coming soon", value: "..." },
     ],
   },

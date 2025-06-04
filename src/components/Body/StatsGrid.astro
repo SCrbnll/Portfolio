@@ -1,7 +1,20 @@
 ---
+import StatsCard from './StatsCard.astro';
 
+interface Props {
+    stats: Array<any>;
+}
+
+const { stats } = Astro.props
 ---
 
 <section class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-2 lg:gap-4 max-w-6xl mx-auto px-4 p-10">
-  <slot />
+  {
+    stats.map(({ icon, title, align, items }) => {
+        const Icon = icon;
+        return (
+            <StatsCard icon={Icon} title={title} align={align} items={items} />
+        );
+        })
+  }
 </section>

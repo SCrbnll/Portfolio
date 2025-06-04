@@ -1,0 +1,29 @@
+---
+import ProjectCard from "./ProjectCard.astro";
+
+interface Project {
+  img: string;
+  title: string;
+  description: string;
+  badges: string[];
+  buttons: { text: string; href: string; icon?: any }[];
+}
+
+interface Props {
+  projects: Project[];
+}
+
+const { projects } = Astro.props;
+---
+
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-2 lg:gap-4 max-w-6xl mx-auto px-4">
+  {projects.map((project) => (
+    <ProjectCard
+      img={project.img}
+      title={project.title}
+      description={project.description}
+      badges={project.badges}
+      buttons={project.buttons}
+    />
+  ))}
+</section>

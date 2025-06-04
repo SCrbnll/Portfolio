@@ -1,6 +1,5 @@
 ---
-import { SOCIALS } from '../../utils/constants'
-import BlogIcon from '../icons/BlogIcon.astro';
+import { SOCIALS } from '../../constants/socials'
 import PortfolioIcon from '../icons/PortfolioIcon.astro';
 import SendIcon from '../icons/SendIcon.astro';
 import LinkButton from '../LinkButton.astro';
@@ -12,7 +11,7 @@ interface Props {
 const myself = Astro.props.myself;
 ---
 
-<main class="bg-gray-100 text-black shadow p-10">
+<section class="text-white p-10" id="#">
   <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 px-4 items-center">
     <div class="flex justify-center md:justify-start">
       <img 
@@ -62,7 +61,7 @@ const myself = Astro.props.myself;
     </div>
 
   </div>
-</main>
+</section>
 
 <script is:inline>
   const roles = [
