@@ -1,46 +1,46 @@
 
 export const TECHNOLOGIES = [
     // BACKEND LANGUAGES
-    { name: "Java", icon: "openjdk", color: "ED8B00" },
-    { name: "PHP", icon: "php", color: "777BB4" },
+    { name: "Java", icon: "openjdk", color: "ED8B00", category: "backend" },
+    { name: "PHP", icon: "php", color: "777BB4", category: "backend" },
 
     // BACKEND FRAMEWORKS
-    { name: "Spring Framework", icon: "spring", color: "6DB33F" },
-    { name: "Hibernate", icon: "hibernate", color: "59666C" },
-    { name: "Node.js", icon: "nodejs", color: "3C873A" },
+    { name: "Spring Framework", icon: "spring", color: "6DB33F", category: "backend" },
+    { name: "Hibernate", icon: "hibernate", color: "59666C", category: "backend" },
+    { name: "Node.js", icon: "nodejs", color: "3C873A", category: "backend" },
     
     // BD
-    { name: "MySQL", icon: "mysql", color: "00000F" },
-    { name: "PostgreSQL", icon: "postgresql", color: "336791" },
+    { name: "MySQL", icon: "mysql", color: "00000F", category: "database" },
+    { name: "PostgreSQL", icon: "postgresql", color: "336791", category: "database" },
     
     // FRONTEND LANGUAGES
-    { name: "JavaScript", icon: "javascript", color: "F7DF1E" },
-    { name: "TypeScript", icon: "typeScript", color: "3178C6" },
+    { name: "JavaScript", icon: "javascript", color: "F7DF1E", category: "frontend" },
+    { name: "TypeScript", icon: "typescript", color: "3178C6", category: "frontend" },
 
     // FRONTEND CSS
-    { name: "Tailwind", icon: "tailwindcss", color: "38B2AC" },
-    { name: "Bootstrap", icon: "bootstrap", color: "7952B3" },
+    { name: "Tailwind", icon: "tailwindcss", color: "38B2AC", category: "frontend" },
+    { name: "Bootstrap", icon: "bootstrap", color: "7952B3", category: "frontend" },
     
     // FRONTEND FRAMEWORKS
-    { name: "React", icon: "react", color: "61DAFB" },
-    { name: "Astro", icon: "astro", color: "FF5A03" },
-    { name: "Angular", icon: "angular", color: "DD0031" },
-    { name: "Vue", icon: "vue", color: "4FC08D" },
-    { name: "Laravel", icon: "laravel", color: "FF2D20" },
+    { name: "React", icon: "react", color: "61DAFB", category: "frontend" },
+    { name: "Astro", icon: "astro", color: "FF5A03", category: "frontend" },
+    { name: "Angular", icon: "angular", color: "DD0031", category: "frontend" },
+    { name: "Vue", icon: "vue", color: "4FC08D", category: "frontend" },
+    { name: "Laravel", icon: "laravel", color: "FF2D20", category: "backend" },
 
     // MOBILE
-    { name: "React Native", icon: "react", color: "61DAFB" },
-    { name: "Expo", icon: "expo", color: "1B1F23" },
-    { name: "Flutter", icon: "flutter", color: "0553B1" },    
+    { name: "React Native", icon: "react", color: "61DAFB", category: "mobile" },
+    { name: "Expo", icon: "expo", color: "1B1F23", category: "mobile" },
+    { name: "Flutter", icon: "flutter", color: "0553B1", category: "mobile" },    
 
     // DEVOPS
-    { name: "AWS", icon: "amazon-web-services", color: "FD7E14" },
-    { name: "Docker", icon: "docker", color: "2496ED" },
-    { name: "Nginx", icon: "nginx", color: "009639" },
-    { name: "Apache", icon: "apache", color: "800080" },
-    { name: "Azure", icon: "microsoft-azure", color: "07405E" },
+    { name: "AWS", icon: "amazon-web-services", color: "FD7E14", category: "devops" },
+    { name: "Docker", icon: "docker", color: "2496ED", category: "devops" },
+    { name: "Nginx", icon: "nginx", color: "009639", category: "devops" },
+    { name: "Apache", icon: "apache", color: "800080", category: "devops" },
+    { name: "Azure", icon: "microsoft-azure", color: "07405E", category: "devops" },
     
     // OTHER
-    { name: "C#", icon: "sharp", color: "556472" },
-    { name: "Unity", icon: "unity", color: "000000" },
+    { name: "C#", icon: "sharp", color: "556472", category: "other" },
+    { name: "Unity", icon: "unity", color: "000000", category: "other" },
 ]
