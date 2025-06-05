@@ -30,7 +30,7 @@ const { icon: Icon, title, items, align = "center" } = Astro.props;
           <div class="flex items-center gap-3">
             {img && <img src={img} alt={title} class="w-6 h-6" />}
             {ItemIcon && <ItemIcon class="w-4 h-4" />}
-            <span class="text-sm text-wrap max-w-60">{title}</span>
+            <span class="text-sm text-wrap max-w-60 md:max-w-50 lg:maw-w-60">{title}</span>
           </div>
           <p
             class={`text-xs self-${align}`}
