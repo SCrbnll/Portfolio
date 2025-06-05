@@ -1,17 +1,176 @@
 @import "tailwindcss";
 
 :root {
-  /* THEME LIGHT */
-  --background-light: #005813;
+  /* DARK THEME – Giratina */
+  --background-dark: #1a0e1a;
+  --surface-dark: #261326; 
+  --card-background-dark: #4b255e;
+  --card-hover-background-dark: #5e3071;
+  --button-background-dark: #721c24;
+  --button-hover-background-dark: #8e2a34;
+  --button-text-dark: #d4af37;
+  --text-primary-dark: #d4afc2;
+  --text-secondary-dark: #a98cbf;
 
-    /* THEME DARK */
-  --background-dark: #4d008b;
+/* LIGHT THEME – Giratina Shiny */
+--background-light: #f5f4fa;                          /* Lavanda muy pálido / casi blanco */
+--surface-light: #e6e5f0;                             /* Lila claro grisáceo (header/footer/aside) */
+--card-background-light: #edeaf7;                     /* Fondo card lavanda suave */
+--card-hover-background-light: #dcd9ee;               /* Hover card lila pastel */
+--button-background-light: #8b7fc1;                   /* Lila medio */
+--button-hover-background-light: #a99fde;             /* Hover botón lila claro */
+--button-text-light: #f4f3fb;                         /* Blanco lavanda */
+--button-border-light: #9a90c1;                       /* Borde lila suave */
+--text-primary-light: #4c486b;                        /* Violeta oscuro suave */
+--text-secondary-light: #3f3c55;                      /* Violeta grisáceo */               
+ 
 }
 
-body[data-theme="light"] {
-  background: var(--background-light);
-}
-
+/* -------------------- DARK THEME -------------------- */
 body[data-theme="dark"] {
   background: var(--background-dark);
+  h1, h2, h3 {
+    color: var(--text-primary-dark);
+  } 
+  p, h5 {
+    color: var(--text-secondary-dark);
+  }
+  span {
+    color: #e2e2e2
+  }
+  ul {
+    color: #acacac;
+  }
 }
+
+body[data-theme="dark"] .scrbnll-header,
+body[data-theme="dark"] .scrbnll-footer {
+  background: var(--surface-dark);
+  color: var(--text-primary-dark);
+}
+
+body[data-theme="dark"] aside {
+  background: var(--background-dark);
+}
+
+body[data-theme="dark"] .scrbnll-text {
+  color: var(--text-primary-dark);
+}
+
+body[data-theme="dark"] .scrbnll-text:hover {
+  color: var(--text-secondary-dark);
+}
+
+body[data-theme="dark"] .scrbnll-button {
+  background: var(--button-background-dark);
+  color: var(--button-text-dark);
+  transition: all 0.3s ease;
+}
+
+body[data-theme="dark"] .scrbnll-button:hover {
+  background: var(--button-hover-background-dark);
+  color: var(--button-text-dark);
+}
+
+body[data-theme="dark"] .scrbnll-card {
+  background: var(--card-background-dark);
+  transition: background 0.3s ease;
+}
+
+body[data-theme="dark"] .scrbnll-card:hover {
+  background: var(--card-hover-background-dark);
+}
+
+body[data-theme="dark"] .scrbnll-project-card {
+  background: var(--card-background-dark);
+}
+
+body[data-theme="dark"] .scrbnll-experience-card {
+  background: var(--card-background-dark);
+  border: 1px solid #e2e2e2;
+}
+
+body[data-theme="dark"] .scrbnll-skill-card {
+  background: var(--card-background-dark);
+}
+
+body[data-theme="dark"] .scrbnll-icon {
+  background: var(--button-background-dark);
+  color: var(--button-text-dark);
+}
+
+
+/* -------------------- LIGHT THEME -------------------- */
+body[data-theme="light"] {
+  background: var(--background-light);
+  color: var(--text-primary-light);
+  h1, h2, h3 {
+    color: var(--text-primary-light);
+  } 
+  h5 {
+    color: #8e8b9e;
+  }
+  p {
+    color: var(--text-secondary-light);
+  }
+  span {
+    color: #e6e1ff
+  }
+  ul {
+    color: #918fb4;
+  }
+}
+
+body[data-theme="light"] .scrbnll-header,
+body[data-theme="light"] .scrbnll-footer,
+body[data-theme="light"] aside {
+  background: var(--surface-light);
+  color: var(--text-primary-light);
+}
+
+body[data-theme="light"] .scrbnll-text {
+  color: var(--text-primary-light);
+}
+
+body[data-theme="light"] .scrbnll-text:hover {
+  color: var(--text-secondary-light);
+}
+
+body[data-theme="light"] .scrbnll-button {
+  background: var(--button-background-light);
+  color: var(--button-text-light);
+  transition: all 0.3s ease;
+}
+
+body[data-theme="light"] .scrbnll-button:hover {
+  background: var(--button-hover-background-light);
+  color: var(--button-text-light);
+}
+
+body[data-theme="light"] .scrbnll-card {
+  background: var(--card-background-light);
+  transition: background 0.3s ease;
+}
+
+body[data-theme="light"] .scrbnll-card:hover {
+  background: var(--card-hover-background-light);
+}
+
+body[data-theme="light"] .scrbnll-project-card {
+  background: var(--card-background-light);
+}
+
+body[data-theme="light"] .scrbnll-experience-card {
+  background: var(--card-background-light);
+  border: 1px solid #d8cabf;
+}
+
+body[data-theme="light"] .scrbnll-skill-card {
+  background: var(--card-background-light);
+}
+
+body[data-theme="light"] .scrbnll-icon {
+  background: var(--button-background-light);
+  color: var(--button-text-light);
+}
+

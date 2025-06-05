@@ -15,28 +15,28 @@ interface Props {
 
 const { icon: Icon, title, items, align = "center" } = Astro.props;
 ---
-<div class="w-full max-w-sm bg-zinc-900 rounded-xl shadow p-5 flex flex-col gap-4">
+<div class="w-full max-w-sm rounded-xl shadow p-5 flex flex-col gap-4 scrbnll-project-card">
   <div class="flex items-center gap-4">
-    <div class=" bg-zinc-700 p-3 rounded-full text-white">
+    <div class=" p-3 rounded-full scrbnll-icon">
       <Icon class="w-6 h-6" />
     </div>
-    <h3 class="text-lg font-semibold text-white">{title}</h3>
+    <h3 class="text-lg font-semibold">{title}</h3>
   </div>
 
   <div class="flex flex-col gap-3">
     {
       items.map(({ title, value, icon: ItemIcon, img }) => (
-        <div class="flex items-center justify-between bg-gray-100 dark:bg-zinc-800 p-3 rounded-xl">
+        <div class="flex items-center justify-between p-3 rounded-xl scrbnll-icon">
           <div class="flex items-center gap-3">
             {img && <img src={img} alt={title} class="w-6 h-6" />}
-            {ItemIcon && <ItemIcon class="w-4 h-4 text-white" />}
-            <span class="text-sm text-wrap max-w-60 text-white">{title}</span>
+            {ItemIcon && <ItemIcon class="w-4 h-4" />}
+            <span class="text-sm text-wrap max-w-60">{title}</span>
           </div>
-          <span
-            class={`text-xs text-gray-500 dark:text-gray-300 self-${align}`}
+          <p
+            class={`text-xs self-${align}`}
           >
             {value}
-          </span>
+          </p>
         </div>
       ))
     }

@@ -6,7 +6,7 @@ import SunIcon from "./../icons/SunIcon.astro";
 <button
   type="button"
   id="theme-toggle-btn"
-  class="bg-black text-white px-2 py-2 rounded-xl transition-colors duration-300 hover:bg-white hover:text-black"
+  class="px-2 py-2 rounded-xl transition-colors duration-300 scrbnll-button"
 >
   <span id="sun-icon" class="hidden">
     <SunIcon class="size-5" />
@@ -39,6 +39,7 @@ import SunIcon from "./../icons/SunIcon.astro";
     document.body.setAttribute("data-theme", resolved);
     sun.classList.toggle("hidden", resolved !== "light");
     moon.classList.toggle("hidden", resolved !== "dark");
+    window.dispatchEvent(new Event("themechange"));
   }
 
   function toggleTheme() {

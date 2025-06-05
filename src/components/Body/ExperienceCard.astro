@@ -5,16 +5,16 @@ const { company, logo, href, period, description, responsibilities, technologies
 ---
 
 <div class={`relative md:w-1/2 px-4 py-2 ${align === 'right' ? 'md:ml-auto' : 'md:mr-auto'}`}>
-  <div class="bg-white dark:bg-gray-800 shadow-md rounded-lg p-6 border border-gray-200 dark:border-gray-700">
+  <div class="shadow-md rounded-lg p-6 border scrbnll-experience-card">
     <div class="flex items-center mb-2">
       <img src={logo} alt={company} class="w-30 object-contain mr-4 cursor-pointer" onclick={`window.open('${href}', '_blank');`} />
       <div>
-        <h3 class="text-lg font-semibold text-gray-800 dark:text-white">{company}</h3>
-        <span class="text-sm text-gray-500 dark:text-gray-400">{period}</span>
+        <h3 class="text-lg font-semibold">{company}</h3>
+        <p class="text-sm">{period}</p>
       </div>
     </div>
-    <p class="text-gray-700 dark:text-gray-300 mb-2">{description}</p>
-    <ul class="list-disc list-inside text-sm text-gray-600 dark:text-gray-400 mb-4">
+    <p class=" mb-2">{description}</p>
+    <ul class="list-disc list-inside text-sm mb-4">
       {responsibilities.map((point: string) => (
         <li>{point}</li>
       ))}

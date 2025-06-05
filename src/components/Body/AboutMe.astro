@@ -11,8 +11,8 @@ interface Props {
 const myself = Astro.props.myself;
 ---
 
-<section class="text-white p-10" id="#">
-  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 px-4 items-center">
+<section class="p-10" id="#">
+  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 px-4 items-center ">
     <div class="flex justify-center md:justify-start">
       <img 
         src={myself} 
@@ -22,10 +22,10 @@ const myself = Astro.props.myself;
     </div>
 
     <div class="text-center md:text-left">
-      <h1 class="text-3xl md:text-4xl font-bold">Samuel Carbonell Gonçalves</h1>
+      <h1 class="text-3xl md:text-4xl font-bold ">Samuel Carbonell Gonçalves</h1>
 
       <div class="text-xl md:text-2xl font-semibold h-10 mt-2">
-        <span id="typing-text" class="animate-pulse">FullStack Developer</span>
+        <h5 id="typing-text" class="animate-pulse">FullStack Developer</h5>
       </div>
 
       <p class="mt-4 text-base md:text-lg max-w-xl mx-auto md:mx-0">
@@ -37,7 +37,7 @@ const myself = Astro.props.myself;
             SOCIALS.map((social) => {
                 const Icon = social.icon;
                 return (
-                <LinkButton href={social.url} title={social.name} target='_blank'>
+                <LinkButton href={social.url} title={social.name} target='_blank' customClass='scrbnll-button'>
                     <Icon />
                 </LinkButton>
                 )
@@ -45,15 +45,15 @@ const myself = Astro.props.myself;
         }
       </div>
       <div class="mt-6 grid grid-cols-1 lg:grid-cols-3 gap-4 w-full">
-        <LinkButton href="#Portfolio" title="Portfolio">
+        <LinkButton href="#Portfolio" title="Portfolio" customClass='scrbnll-button'>
             <PortfolioIcon slot="before" />
             <span>View my work</span>
         </LinkButton>
-        <LinkButton href="#Contact" title="Contact">
+        <LinkButton href="#Contact" title="Contact" customClass='scrbnll-button'>
             <SendIcon slot="before" />
             <span>Get in Touch</span>
         </LinkButton>
-        <!-- <LinkButton href="/blog" title="Resume">
+        <!-- <LinkButton href="/blog" title="Resume" customClass='scrbnll-button'>
             <BlogIcon slot="before" />
             <span>Beyond Code</span>
         </LinkButton> -->

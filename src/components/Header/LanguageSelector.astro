@@ -6,7 +6,7 @@ import { LANGUAGES } from "../../constants/global";
   <button
     id="lang-toggle"
     type="button"
-    class="bg-black text-white px-4 py-2.5 rounded-xl flex items-center gap-2 hover:bg-white hover:text-black transition-colors"
+    class="px-4 py-2.5 rounded-xl flex items-center gap-2 transition-colors scrbnll-button"
   >
     <img
       id="selected-flag"
@@ -27,19 +27,19 @@ import { LANGUAGES } from "../../constants/global";
 
   <div
     id="lang-dropdown"
-    class="absolute right-0 mt-2 w-28 bg-white border border-gray-200 rounded-xl shadow z-10 hidden"
+    class="absolute right-0 mt-2 w-28 rounded-xl shadow z-10 hidden bg-black"
   >
     {
       LANGUAGES.map((lang) => (
         <button
           type="button"
-          class="flex items-center gap-2 px-4 py-2 hover:bg-gray-100 text-black w-full text-left rounded-xl"
+          class="flex items-center gap-2 px-4 py-2 w-full text-left rounded-xl"
           data-lang-code={lang.code}
           data-lang-name={lang.name}
           data-lang-flag={lang.flag}
         >
           <img src={lang.flag} alt={lang.name} class="w-5 h-5" />
-          <span>{lang.name}</span>
+          <p>{lang.name}</p>
         </button>
       ))
     }
