@@ -7,7 +7,8 @@ export const TECHNOLOGIES = [
     // BACKEND FRAMEWORKS
     { name: "Spring Framework", icon: "spring", color: "6DB33F", category: "backend" },
     { name: "Hibernate", icon: "hibernate", color: "59666C", category: "backend" },
-    { name: "Node.js", icon: "nodejs", color: "3C873A", category: "backend" },
+    { name: "Node.js", icon: "node.js", color: "3C873A", category: "backend" },
+    { name: "Laravel", icon: "laravel", color: "FF2D20", category: "backend" },
     
     // BD
     { name: "MySQL", icon: "mysql", color: "00000F", category: "database" },
@@ -26,7 +27,6 @@ export const TECHNOLOGIES = [
     { name: "Astro", icon: "astro", color: "FF5A03", category: "frontend" },
     { name: "Angular", icon: "angular", color: "DD0031", category: "frontend" },
     { name: "Vue", icon: "vue", color: "4FC08D", category: "frontend" },
-    { name: "Laravel", icon: "laravel", color: "FF2D20", category: "backend" },
 
     // MOBILE
     { name: "React Native", icon: "react", color: "61DAFB", category: "mobile" },
@@ -37,7 +37,6 @@ export const TECHNOLOGIES = [
     { name: "AWS", icon: "amazon-web-services", color: "FD7E14", category: "devops" },
     { name: "Docker", icon: "docker", color: "2496ED", category: "devops" },
     { name: "Nginx", icon: "nginx", color: "009639", category: "devops" },
-    { name: "Apache", icon: "apache", color: "800080", category: "devops" },
     { name: "Azure", icon: "microsoft-azure", color: "07405E", category: "devops" },
     
     // OTHER

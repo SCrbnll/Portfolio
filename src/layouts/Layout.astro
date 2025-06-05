@@ -1,5 +1,6 @@
 ---
 import NavBar from "../components/Header/NavBar.astro"
+import { GITHUB_URL } from "../constants/global"
 
 interface Props {
   title: string
@@ -28,7 +29,7 @@ const { description, title } = Astro.props
 
     <!-- Footer -->
     <footer class="mt-12 p-6 text-center text-sm text-gray-600 bg-gray-100">
-      &copy; 2025 Samuel Carbonell Gonçalves
+      Portfolio by <a href={GITHUB_URL} class="font-bold" target="_blank">Samuel Carbonell</a>
     </footer>
   </body>
   
