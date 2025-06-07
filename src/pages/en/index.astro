@@ -13,7 +13,7 @@ const lang = getLangFromUrl(Astro.url);
 ---
 
 <Layout>
-    <AboutMe myself="src/assets/Me.jpg"/>
+    <AboutMe myself="/Me.jpg"/>
     <StatsGrid stats={STATS[lang]} />
     <Portfolio title='Portfolio' subtitle='Check out my dev career' />
     <Contact title='Contact' subtitle='Send me a message'/>
