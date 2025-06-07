@@ -16,7 +16,7 @@ interface Props {
 const { projects } = Astro.props;
 ---
 
-<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-2 lg:gap-4 max-w-6xl mx-auto px-4">
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-2 lg:gap-4 max-w-6xl mx-auto px-4 fade-in-up" data-animate>
   {projects.map((project) => (
     <ProjectCard
       img={project.img}

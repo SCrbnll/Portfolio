@@ -15,9 +15,9 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang, aboutTranslations);
 ---
 
-<section class="p-10" id="#">
+<section class="p-10 fade-in-up" id="#" data-animate>
   <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 px-4 items-center ">
-    <div class="flex justify-center md:justify-start">
+    <div class="flex justify-center md:justify-start fade-in-left" data-animate>
       <img 
         src={myself} 
         alt=`Foto de perfil de Samuel Carbonell Gonçalves` 
@@ -25,7 +25,7 @@ const t = useTranslations(lang, aboutTranslations);
       />
     </div>
 
-    <div class="text-center md:text-left">
+    <div class="text-center md:text-left fade-in-right" data-animate>
       <h1 class="text-3xl md:text-4xl font-bold ">Samuel Carbonell Gonçalves</h1>
 
       <div class="text-xl md:text-2xl font-semibold h-10 mt-2">

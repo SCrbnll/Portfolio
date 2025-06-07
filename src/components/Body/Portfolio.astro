@@ -61,6 +61,7 @@ const tabs = [
 
   function showTab(id) {
     panels.forEach((panel) => {
+      panel.classList.toggle("active", panel.id === id);
       panel.classList.toggle("hidden", panel.id !== id);
     });
 
