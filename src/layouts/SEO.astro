@@ -1,0 +1,61 @@
+---
+interface SEOProps {
+  title?: string;
+  description?: string;
+  image?: string;
+  url?: string;
+  type?: string;
+}
+
+const {
+  title = "Samuel Carbonell Portfolio",
+  description = "¿Nos conocemos? Si no es así, aquí tienes mi porfolio para ver lo que hago como dev. ¡Pasa sin miedo!",
+  image = "https://www.samuelcg.com/banner.png",
+  url = Astro.site ?? "https://www.samuelcg.com/",
+  type = "website",
+} = Astro.props as SEOProps;
+---
+
+<head>
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content={type} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={image} />
+  <meta property="og:url" content={url} />
+  <meta property="og:site_name" content="Samuel Carbonell Portfolio" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={image} />
+
+  <!-- Robots -->
+  <meta name="robots" content="index, follow" />
+
+  <!-- Canonical -->
+  <link rel="canonical" href={url} />
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json" is:inline>
+    {JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Person",
+      name: "Samuel Carbonell",
+      url,
+      sameAs: [
+        "https://linkedin.com/in/samuu-crbnll",
+        "https://github.com/SCrbnll",
+      ],
+    })}
+  </script>
+</head>

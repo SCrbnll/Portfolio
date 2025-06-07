@@ -3,26 +3,14 @@ import NavBar from "../components/Header/NavBar.astro"
 import { GITHUB_URL } from "../constants/global"
 import { layoutTranslations } from "../i18n/components/layout"
 import { getLangFromUrl, useTranslations } from "../i18n/utils"
+import SEO from "./SEO.astro"
 
-interface Props {
-  title: string
-  description: string
-}
-
-const { description, title } = Astro.props
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang, layoutTranslations);
 ---
 
 <html lang="es">
-   <head>
-    <meta charset="UTF-8" />
-    <meta name="description" content={description} />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
-  </head>
+  <SEO />
   <body>
     <NavBar/>
 
