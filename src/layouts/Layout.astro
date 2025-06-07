@@ -1,6 +1,8 @@
 ---
 import NavBar from "../components/Header/NavBar.astro"
 import { GITHUB_URL } from "../constants/global"
+import { layoutTranslations } from "../i18n/components/layout"
+import { getLangFromUrl, useTranslations } from "../i18n/utils"
 
 interface Props {
   title: string
@@ -8,9 +10,11 @@ interface Props {
 }
 
 const { description, title } = Astro.props
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang, layoutTranslations);
 ---
 
-<html lang="en">
+<html lang="es">
    <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
@@ -29,8 +33,7 @@ const { description, title } = Astro.props
 
     <!-- Footer -->
     <footer class="mt-12 p-6 text-center text-sm scrbnll-footer">
-      Portfolio by <a href={GITHUB_URL} class="font-bold" target="_blank">Samuel Carbonell</a>
+      {t.footer} <a href={GITHUB_URL} class="font-bold" target="_blank">Samuel Carbonell</a>
     </footer>
   </body>
-  
 </html>

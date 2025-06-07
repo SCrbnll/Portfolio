@@ -8,45 +8,47 @@ import SunIcon from "./../icons/SunIcon.astro";
 import LinkedInIcon from "./../icons/LinkedInIcon.astro";
 import GitHubIcon from "./../icons/GitHubIcon.astro";
 import LinkButton from "./../LinkButton.astro";
-import { LINKEDIN_URL, GITHUB_URL } from "../../constants/global";
+import { LINKEDIN_URL, GITHUB_URL, LANGUAGES } from "../../constants/global";
+import { navbarTranslations } from "../../i18n/components/navbar";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
 
 const themes = [
   { name: "Light", icon: SunIcon, value: "light" },
   { name: "Dark", icon: MoonIcon, value: "dark" },
 ];
 
-const languages = [
-  { code: "es", name: "Spanish", flag: "/flags/es.svg" },
-  { code: "en", name: "English", flag: "/flags/en.svg" },
-];
 
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang, navbarTranslations);
+const languages = LANGUAGES[lang]
 ---
 
 <aside
   id="sideMenu"
   class="fixed top-0 left-0 w-64 h-full shadow-lg transform -translate-x-full transition-transform duration-300 z-[60] flex flex-col"
 >
-  <div class="p-8 border-b justify-center items-center flex scrbnll-header">
+  <div class="border-b flex justify-center items-center py-5 px-6 scrbnll-header">
     <h1 class="animate-pulse"><b>Samuel Carbonell Gonçalves</b></h1>
   </div>
+
 
   <nav class="flex-1 flex flex-col gap-4 p-4 text-sm">
     <LinkButton href="/#" title="Home" customClass="scrbnll-button">
       <HomeIcon slot="before" />
-      Home
+      {t.homeTitle}
     </LinkButton>
     <LinkButton href="#Portfolio" title="Portfolio" customClass="scrbnll-button">
       <PortfolioIcon slot="before" />
-      Portfolio
+      {t.portfolioTitle}
     </LinkButton>
     <LinkButton href="#Contact" title="Contact" customClass="scrbnll-button">
       <SendIcon slot="before" />
-      Contact
+      {t.contactTitle}
     </LinkButton>
   </nav>
 
   <div class="p-4 flex flex-col gap-4 text-sm">
-    <GroupedButtons title="Theme">
+    <GroupedButtons title={t.themeTitle}>
       {
         themes.map((theme) => (
           <button
@@ -61,7 +63,7 @@ const languages = [
       }
     </GroupedButtons>
 
-    <GroupedButtons title="Language">
+    <GroupedButtons title={t.languageTitle}>
       {
         languages.map((lang) => (
           <button
@@ -91,16 +93,13 @@ const languages = [
   const toggleBtn = document.getElementById("toggleMenu");
   const menu = document.getElementById("sideMenu");
   const overlay = document.getElementById("menuOverlay");
-  const menuIcon = document.getElementById("menuIcon");
   const openMenu = () => {
     menu.classList.remove("-translate-x-full");
     overlay.classList.remove("hidden");
-    menuIcon.classList.add("hidden");
   };
   const closeMenu = () => {
     menu.classList.add("-translate-x-full");
     overlay.classList.add("hidden");
-    menuIcon.classList.remove("hidden");
   };
   toggleBtn.addEventListener("click", () => {
     const isOpen = !menu.classList.contains("-translate-x-full");
@@ -133,6 +132,10 @@ const languages = [
   setThemeAttr(getSavedTheme());
 
   /* ==== LANGUAGES ==== */
+  const languages = [
+    { code: "es", name: "Spanish", flag: "/flags/es.svg" },
+    { code: "en", name: "English", flag: "/flags/en.svg" },
+  ];
   const langButtons = document.querySelectorAll("button[data-lang]");
   function getSavedLang() {
     return localStorage.getItem("lang") || "es";
@@ -150,6 +153,11 @@ const languages = [
     btn.addEventListener("click", () => {
       const selectedLang = btn.getAttribute("data-lang");
       setLangAttr(selectedLang);
+      
+      const pathParts = window.location.pathname.split('/');
+      if (languages.some(({ code }) => code === pathParts[1])) pathParts.splice(1, 1);
+      const newPath = (selectedLang === 'es' ? '/' : `/${selectedLang}/`) + pathParts.slice(1).join('/');
+      window.location.pathname = newPath.replace(/\/+$/, '');
     });
   });
   setLangAttr(getSavedLang());

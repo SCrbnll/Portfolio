@@ -7,7 +7,29 @@ export const WHATSAPP_URL = "https://api.whatsapp.com/send/?phone=34693649721&te
 export const PHONE_NUMBER = "+34 693649721";
 export const CV_URL = "https://github.com/SCrbnll/SCrbnllDev/blob/main/public/Curriculum%20Vitae.pdf";
 
-export const LANGUAGES = [
-  { code: "es", name: "Español", flag: "/flags/es.svg" },
-  { code: "en", name: "English", flag: "/flags/en.svg" },
-];
+export const LANGUAGES = {
+  es: [
+    {
+      code: "es",
+      name: "Español",
+      flag: "/flags/es.svg",
+    },
+    {
+      code: "en",
+      name: "Inglés",
+      flag: "/flags/en.svg",
+    },
+  ],
+  en: [
+    {
+      code: "es",
+      name: "Spanish",
+      flag: "/flags/es.svg",
+    },
+    {
+      code: "en",
+      name: "English",
+      flag: "/flags/en.svg",
+    },
+  ],
+};

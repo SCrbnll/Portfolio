@@ -6,11 +6,16 @@ import StatsGrid from '../components/Body/StatsGrid.astro';
 import { STATS } from '../constants/stats';
 import Portfolio from '../components/Body/Portfolio.astro';
 import Contact from '../components/Body/Contact.astro';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import { layoutTranslations } from '../i18n/components/layout';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang, layoutTranslations);
 ---
 
 <Layout title='Samuel Carbonell Portfolio' description='Descripción de mi sitio Astro'>
     <AboutMe myself="src/assets/Me.jpg"/>
-    <StatsGrid stats={STATS} />
-    <Portfolio title='Portfolio' subtitle='Check out my dev career' />
-    <Contact title='Contact' subtitle='Send me a message'/>
+    <StatsGrid stats={STATS[lang]} />
+    <Portfolio title='Portfolio' subtitle={t.portfolioSubtitle} />
+    <Contact title={t.contactTitle} subtitle={t.contactSubtitle}/>
 </Layout>

@@ -3,12 +3,16 @@ import { SOCIALS } from '../../constants/socials'
 import PortfolioIcon from '../icons/PortfolioIcon.astro';
 import SendIcon from '../icons/SendIcon.astro';
 import LinkButton from '../LinkButton.astro';
+import { getLangFromUrl, useTranslations } from './../../i18n/utils';
+import { aboutTranslations } from './../../i18n/components/aboutMe';
 
 interface Props {
   myself: string;
 }
 
 const myself = Astro.props.myself;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang, aboutTranslations);
 ---
 
 <section class="p-10" id="#">
@@ -16,7 +20,7 @@ const myself = Astro.props.myself;
     <div class="flex justify-center md:justify-start">
       <img 
         src={myself} 
-        alt="Foto de perfil de Samuel Carbonell Gonçalves" 
+        alt=`Foto de perfil de Samuel Carbonell Gonçalves` 
         class="w-50 h-50 md:w-80 md:h-80 mb-4 sm:mb-0 rounded-full object-cover shadow-lg lg:ml-20"
       />
     </div>
@@ -25,11 +29,11 @@ const myself = Astro.props.myself;
       <h1 class="text-3xl md:text-4xl font-bold ">Samuel Carbonell Gonçalves</h1>
 
       <div class="text-xl md:text-2xl font-semibold h-10 mt-2">
-        <h5 id="typing-text" class="animate-pulse">Junior FullStack Developer</h5>
+        <h5 id="typing-text" class="animate-pulse">Junior Fullstack Developer</h5>
       </div>
 
       <p class="mt-4 text-base md:text-lg max-w-xl mx-auto md:mx-0">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima harum quas at aliquid quos eligendi eum qui in, optio rerum sequi, odit blanditiis deleniti facere ullam officiis exercitationem sint eveniet.
+        {t.description}
       </p>
 
       <div class="mt-6 flex flex-wrap flex-row justify-center md:justify-start gap-4">
@@ -47,15 +51,15 @@ const myself = Astro.props.myself;
       <div class="mt-6 grid grid-cols-1 lg:grid-cols-3 gap-4 w-full">
         <LinkButton href="#Portfolio" title="Portfolio" customClass='scrbnll-button'>
             <PortfolioIcon slot="before" />
-            <span>View my work</span>
+            <span>{t.portfolio}</span>
         </LinkButton>
         <LinkButton href="#Contact" title="Contact" customClass='scrbnll-button'>
             <SendIcon slot="before" />
-            <span>Get in Touch</span>
+            <span>{t.contact}</span>
         </LinkButton>
         <!-- <LinkButton href="/blog" title="Resume" customClass='scrbnll-button'>
             <BlogIcon slot="before" />
-            <span>Beyond Code</span>
+            <span>{t.blog}</span>
         </LinkButton> -->
         </div>
     </div>

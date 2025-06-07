@@ -4,19 +4,25 @@ import XIcon from "./../icons/XIcon.astro";
 import ThemeTogle from "./ThemeTogle.astro";
 import LanguageSelector from "./LanguageSelector.astro";
 import HeaderAside from "./HeaderAside.astro";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+import { navbarTranslations } from "../../i18n/components/navbar";
 
 const lightLogo = "/SCrbnll-Logo-White.png";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang, navbarTranslations);
 ---
 
 <div id="menuOverlay" class="fixed inset-0 bg-black/20 backdrop-blur-sm hidden z-40 transition-opacity duration-300"></div>
 
 <header class="w-full shadow fixed top-0 left-0 z-50 scrbnll-header">
   <div class="max-w-6xl mx-auto flex justify-between items-center px-6 py-4">
-    <img id="theme-logo" src={lightLogo} alt="Logo" class="h-14 sm:h-18" />
+    <a href="/#">
+      <img id="theme-logo" src={lightLogo} alt="Logo" class="h-14 sm:h-18"/>
+    </a>
     <nav class="hidden md:flex items-center gap-12 font-medium">
-        <a href="/#" class="flex items-center transition-colors duration-200 scrbnll-text">Home</a>
-        <a href="#Portfolio" class="flex items-center transition-colors duration-200 scrbnll-text">Portfolio</a>
-        <a href="#Contact" class="flex items-center transition-colors duration-200 scrbnll-text">Contact</a>
+        <a href="/#" class="flex items-center transition-colors duration-200 scrbnll-text">{t.homeTitle}</a>
+        <a href="#Portfolio" class="flex items-center transition-colors duration-200 scrbnll-text">{t.portfolioTitle}</a>
+        <a href="#Contact" class="flex items-center transition-colors duration-200 scrbnll-text">{t.contactTitle}</a>
         <div class="flex items-center gap-4">
             <ThemeTogle />
             <LanguageSelector />

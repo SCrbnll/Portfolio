@@ -1,0 +1,19 @@
+---
+import './../../styles/global.css';
+import Layout from './../../layouts/Layout.astro';
+import AboutMe from './../../components/Body/AboutMe.astro';
+import StatsGrid from './../../components/Body/StatsGrid.astro';
+import { STATS } from './../../constants/stats';
+import Portfolio from './../../components/Body/Portfolio.astro';
+import Contact from '././../../components/Body/Contact.astro';
+import { getLangFromUrl } from '../../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+---
+
+<Layout title='Samuel Carbonell Portfolio' description='Descripción de mi sitio Astro'>
+    <AboutMe myself="src/assets/Me.jpg"/>
+    <StatsGrid stats={STATS[lang]} />
+    <Portfolio title='Portfolio' subtitle='Check out my dev career' />
+    <Contact title='Contact' subtitle='Send me a message'/>
+</Layout>

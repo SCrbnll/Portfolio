@@ -19,7 +19,7 @@ interface Props {
 
 const { img = '', title, description, badges, buttons } = Astro.props;
 ---
-<div class="max-w-sm rounded-xl overflow-hidden shadow-md flex flex-col md:mb-4 lg:mb-1">
+<div class="max-w-sm rounded-xl overflow-hidden shadow-md flex flex-col md:mb-4 lg:mb-1 mx-auto">
   <img src={img} alt={title} class="w-full h-48 object-cover" />
 
   <div class="p-4 flex flex-col flex-grow scrbnll-project-card">

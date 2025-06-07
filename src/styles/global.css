@@ -12,18 +12,17 @@
   --text-primary-dark: #d4afc2;
   --text-secondary-dark: #a98cbf;
 
-/* LIGHT THEME – Giratina Shiny */
---background-light: #f5f4fa;                          /* Lavanda muy pálido / casi blanco */
---surface-light: #e6e5f0;                             /* Lila claro grisáceo (header/footer/aside) */
---card-background-light: #edeaf7;                     /* Fondo card lavanda suave */
---card-hover-background-light: #dcd9ee;               /* Hover card lila pastel */
---button-background-light: #8b7fc1;                   /* Lila medio */
---button-hover-background-light: #a99fde;             /* Hover botón lila claro */
---button-text-light: #f4f3fb;                         /* Blanco lavanda */
---button-border-light: #9a90c1;                       /* Borde lila suave */
---text-primary-light: #4c486b;                        /* Violeta oscuro suave */
---text-secondary-light: #3f3c55;                      /* Violeta grisáceo */               
- 
+  /* LIGHT THEME – Giratina Shiny */
+  --background-light: #f5f4fa;
+  --surface-light: #e6e5f0;
+  --card-background-light: #edeaf7;
+  --card-hover-background-light: #dcd9ee;
+  --button-background-light: #8b7fc1;
+  --button-hover-background-light: #a99fde;
+  --button-text-light: #f4f3fb;
+  --button-border-light: #9a90c1;
+  --text-primary-light: #4c486b;
+  --text-secondary-light: #3f3c55;
 }
 
 /* -------------------- DARK THEME -------------------- */
