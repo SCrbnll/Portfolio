@@ -36,7 +36,7 @@ export const PROJECTS = {
     {
         img: "https://raw.githubusercontent.com/SCrbnll/KnightFate/refs/heads/main/knight_fate_new.png",
       title: "Knight Fate",
-      description: "Knight Fate es un juego de plataformas 2D en Unity, desarrollado en equipo, donde un caballero debe superar retos y enemigos en una mazmorca.",
+      description: "Knight Fate es un juego de plataformas 2D en Unity, desarrollado en equipo, donde un caballero debe superar retos y enemigos en una mazmorra.",
       badges: ["Unity", "C#"],
       buttons: [
             { "text": "GitHub", "href": "https://github.com/SCrbnll/KnightFate", "icon": GitHubIcon },
