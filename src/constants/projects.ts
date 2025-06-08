@@ -25,12 +25,21 @@ export const PROJECTS = {
     },
     {
         img: "https://raw.githubusercontent.com/SCrbnll/Pokedex/main/pokedex.png",
-      title: "Pokédex",
-      description: "Pokédex web con Angular y PokeApi. Busca, filtra y descubre información detallada sobre los Pokémon de manera intuitiva.",
-      badges: ["Angular", "TypeScript"],
-      buttons: [
-            { "text": "GitHub", "href": "https://github.com/SCrbnll/Pokedex", "icon": GitHubIcon },
-            { "text": "Demo", "href": "https://scrbnll-pokedex.netlify.app/", "icon": RedirectIcon }
+        title: "Pokédex",
+        description: "Pokédex web con Angular y PokeApi. Busca, filtra y descubre información detallada sobre los Pokémon de manera intuitiva.",
+        badges: ["Angular", "TypeScript"],
+        buttons: [
+                { "text": "GitHub", "href": "https://github.com/SCrbnll/Pokedex", "icon": GitHubIcon },
+                { "text": "Demo", "href": "https://scrbnll-pokedex.netlify.app/", "icon": RedirectIcon }
+            ]
+    },
+    {
+        img: "https://raw.githubusercontent.com/SCrbnll/NightFlameBot/refs/heads/main/nightflamebot.png",
+        title: "NightFlameBot",
+        description: "NightFlameBot es un bot de Discord con comandos de diversión, gestión, información y respuestas automáticas.",
+        badges: ["Node.js", "Discord"],
+        buttons: [
+                { "text": "GitHub", "href": "https://github.com/SCrbnll/NightFlameBot", "icon": GitHubIcon },
         ]
     },
     {
@@ -66,12 +75,21 @@ export const PROJECTS = {
     },
     {
         img: "https://raw.githubusercontent.com/SCrbnll/Pokedex/main/pokedex.png",
-      title: "Pokédex",
-      description: "Pokédex web with Angular and PokeApi. Search, filter and discover detailed information about Pokémon in a user-friendly way.",
-      badges: ["Angular", "TypeScript"],
-      buttons: [
+        title: "Pokédex",
+        description: "Pokédex web with Angular and PokeApi. Search, filter and discover detailed information about Pokémon in a user-friendly way.",
+        badges: ["Angular", "TypeScript"],
+        buttons: [
             { "text": "GitHub", "href": "https://github.com/SCrbnll/Pokedex", "icon": GitHubIcon },
             { "text": "Demo", "href": "https://scrbnll-pokedex.netlify.app/", "icon": RedirectIcon }
+        ]
+    },
+    {
+        img: "https://raw.githubusercontent.com/SCrbnll/NightFlameBot/refs/heads/main/nightflamebot.png",
+        title: "NightFlameBot",
+        description: "NightFlameBot is a Discord bot with fun commands, management, information and automatic responses.",
+        badges: ["Node.js", "Discord"],
+        buttons: [
+            { "text": "GitHub", "href": "https://github.com/SCrbnll/NightFlameBot", "icon": GitHubIcon },
         ]
     },
     {

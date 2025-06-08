@@ -1,5 +1,6 @@
 export const layoutTranslations = {
   es: {
+    portfolioProjects: "Ver más proyectos",
     portfolioSubtitle: "Conoce mi carrera como desarrollador",
     portfolioButtonProjects: "Proyectos",
     portfolioButtonExperience: "Experiencia",
@@ -9,6 +10,7 @@ export const layoutTranslations = {
     footer: "Portfolio creado por",
   },
   en: {
+    portfolioProjects: "See more projects",
     portfolioSubtitle: "Check out my dev career",
     portfolioButtonProjects: "Projects",
     portfolioButtonExperience: "Experience",
