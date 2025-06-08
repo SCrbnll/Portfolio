@@ -69,3 +69,12 @@
 }
 
 
+.hover-zoom {
+  transition: transform 0.4s ease;
+}
+
+.project-card:hover .hover-zoom {
+  transform: scale(1.1);
+}
+
+

@@ -1,5 +1,11 @@
 ---
+import { toCodes } from "astro:i18n";
+import { GITHUB_URL } from "../../constants/global";
+import LinkButton from "../LinkButton.astro";
 import ProjectCard from "./ProjectCard.astro";
+import { layoutTranslations } from "../../i18n/components/layout";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+import PortfolioIcon from "../icons/PortfolioIcon.astro";
 
 interface Project {
   img: string;
@@ -14,6 +20,8 @@ interface Props {
 }
 
 const { projects } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang, layoutTranslations);
 ---
 
 <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-2 lg:gap-4 max-w-6xl mx-auto px-4 fade-in-up" data-animate>
@@ -27,3 +35,10 @@ const { projects } = Astro.props;
     />
   ))}
 </section>
+
+<div class="flex justify-center mt-8 fade-in-up" data-animate>
+  <LinkButton href={GITHUB_URL} title="GitHub" target='_blank' customClass="scrbnll-button">
+    <PortfolioIcon slot="before" />
+    {t.portfolioProjects}
+</div>
+

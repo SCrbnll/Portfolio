@@ -12,6 +12,7 @@ interface Props {
 
 const { skills } = Astro.props;
 const groupedSkills = skills.reduce((acc, tech) => {
+  if(tech.category === "ignore") return acc;
   if (!acc[tech.category]) acc[tech.category] = [];
   acc[tech.category].push(tech);
   return acc;

@@ -39,4 +39,5 @@ export const TECHNOLOGIES = [
     // OTHER
     { name: "C#", icon: "sharp", color: "556472", category: "other" },
     { name: "Unity", icon: "unity", color: "000000", category: "other" },
+    { name: "Discord", icon: "discord", color: "5865F2", category: "ignore" },
 ]
