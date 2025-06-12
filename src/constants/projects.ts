@@ -24,6 +24,16 @@ export const PROJECTS = {
         ]
     },
     {
+        img: "https://raw.githubusercontent.com/SCrbnll/Ichiban-Clone/refs/heads/main/ichiban.png",
+        title: "Ichiban Clone",
+        description: "Este proyecto es un clon del sitio Ichiban Bike, creado con Astro para fines educativos, destacando animaciones suaves, efectos visuales y mejoras de rendimiento frente al original.",
+        badges: ["Astro", "TypeScript"],
+        buttons: [
+                { "text": "GitHub", "href": "https://github.com/SCrbnll/Ichiban-Clone", "icon": GitHubIcon },
+                { "text": "Demo", "href": "https://ichiban-clone-green.vercel.app/", "icon": RedirectIcon }
+            ]
+    },
+    {
         img: "https://raw.githubusercontent.com/SCrbnll/Pokedex/main/pokedex.png",
         title: "Pokédex",
         description: "Pokédex web con Angular y PokeApi. Busca, filtra y descubre información detallada sobre los Pokémon de manera intuitiva.",
@@ -72,6 +82,16 @@ export const PROJECTS = {
             { "text": "GitHub", "href": "https://github.com/SCrbnll/RoadBeat", "icon": GitHubIcon },
             { "text": "Trailer", "href": "https://youtu.be/ZsJt--pIcPU", "icon": YouTubeIcon }
         ]
+    },
+    {
+        img: "https://raw.githubusercontent.com/SCrbnll/Ichiban-Clone/refs/heads/main/ichiban.png",
+        title: "Ichiban Clone",
+        description: "This project is a clone of the Ichiban Bike site, created with Astro for educational purposes, featuring smooth animations, visual effects, and performance improvements over the original.",
+        badges: ["Astro", "TypeScript"],
+        buttons: [
+                { "text": "GitHub", "href": "https://github.com/SCrbnll/Ichiban-Clone", "icon": GitHubIcon },
+                { "text": "Demo", "href": "https://ichiban-clone-green.vercel.app/", "icon": RedirectIcon }
+            ]
     },
     {
         img: "https://raw.githubusercontent.com/SCrbnll/Pokedex/main/pokedex.png",
