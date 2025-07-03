@@ -54,11 +54,11 @@ export const STATS = {
       align: "end",
       items: [
         {
-          title: "FP Superior en Desarrollo de Aplicaciones Web",
+          title: "Higher Vocational Training in Web Application Development",
           value: "2024-2025",
         },
         {
-          title: "FP Superior en Desarrollo de Aplicaciones Multiplataforma",
+          title: "Higher Vocational Training in Multiplatform Application Development",
           value: "2022-2024",
         },
       ],
