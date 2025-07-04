@@ -6,7 +6,7 @@ export const EXPERIENCES = {
             href: "https://adsalsa.com/",
             logo: "https://www.adsalsa.com/wp-content/uploads/2020/05/logo-300x64.png",
             period: "MARZO 2025 - JUNIO 2025",
-            description: "Practicas como desarrollador frontend",
+            description: "Prácticas como desarrollador frontend",
             responsibilities: [
                 "Participé en el desarrollo de BackOffice con Angular, utilizando Boilerplates para asegurar consistencia y buenas prácticas.",
                 "Aprendí y apliqué principios SOLID y arquitectura hexagonal en entornos de desarrollo reales.",
@@ -21,7 +21,7 @@ export const EXPERIENCES = {
             href: "https://www.mercanza.es/",
             logo: "https://www.mercanza.es/xen_media/logo-mercanza-white.svg",
             period: "MARZO 2024 - JULIO 2024",
-            description: "Practicas como desarrollador frontend",
+            description: "Prácticas como desarrollador frontend",
             responsibilities: [
                 "Aprendizaje autodidacta de Angular durante el período de prácticas.",
                 "Desarrollo de un pequeño panel de BackOffice en Angular como primer acercamiento al framework.",
