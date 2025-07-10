@@ -1,9 +1,9 @@
 ---
-import { EMAIL, EMAIL_DISPLAY, GITHUB_URL, LINKEDIN_URL, PHONE_NUMBER, WHATSAPP_URL } from "../../constants/global";
+import { EMAIL, EMAIL_DISPLAY, GITHUB_URL, LINKEDIN_URL, TELEGRAM_URL, TELEGRAM_USER } from "../../constants/global";
 import EmailIcon from "../icons/EmailIcon.astro";
 import GitHubIcon from "../icons/GitHubIcon.astro";
 import LinkedInIcon from "../icons/LinkedInIcon.astro";
-import WhatsAppIcon from "../icons/WhatsAppIcon.astro";
+import TelegramIcon from "../icons/TelegramIcon.astro";
 import LinkButton from "../LinkButton.astro";
 
 interface Props {
@@ -42,11 +42,11 @@ const { title, subtitle } = Astro.props
                 <p slot="after" class="text-sm">/SCrbnll</p>
             </diV>
         </LinkButton>
-        <LinkButton href={WHATSAPP_URL} title="WhatsApp" target="_blank" customClass='scrbnll-button'>
-            <WhatsAppIcon slot="before"/>
+        <LinkButton href={TELEGRAM_URL} title="Telegram" target="_blank" customClass='scrbnll-button'>
+            <TelegramIcon slot="before"/>
             <diV class="flex flex-col">
-                <span>WhatsApp</span>
-                <p slot="after" class="text-sm">{PHONE_NUMBER}</p>
+                <span>Telegram</span>
+                <p slot="after" class="text-sm">{TELEGRAM_USER}</p>
             </diV>
         </LinkButton>
   </div>
