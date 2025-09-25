@@ -19,8 +19,12 @@ export const STATS = {
       align: "end",
       items: [
         {
-          title: "FP Superior en Desarrollo de Aplicaciones Web",
-          value: "2024-2025",
+          title: "Especialización FP Inteligencia Artificial y Big Data",
+          value: "En curso",
+        },
+        {
+          title: "FP Superior en Desarrollo de Aplicaciones Multiplataforma",
+          value: "2022-2024",
         },
         {
           title: "FP Superior en Desarrollo de Aplicaciones Multiplataforma",
@@ -53,6 +57,10 @@ export const STATS = {
       title: "Graduated",
       align: "end",
       items: [
+        {
+          title: "Specialization Vocational Training in Artificial Intelligence and Big Data",
+          value: "Ongoing",
+        },
         {
           title: "Higher Vocational Training in Web Application Development",
           value: "2024-2025",
