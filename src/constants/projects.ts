@@ -6,6 +6,15 @@ import YouTubeIcon from "../components/icons/YouTubeIcon.astro";
 export const PROJECTS = {
     es:[
         {
+            img: "https://github.com/SCrbnll/F1Telemetry/blob/main/assets/app_banner.png?raw=true",
+            title: "F1 Telemtry",
+            description: "F1 Telemetry HUD es una aplicación interactiva en Python para visualizar en tiempo real la telemetría de carreras de Fórmula 1. Permite reproducir sesiones con un HUD dinámico que muestra posiciones en pista, clasificación en vivo, estado de neumáticos y datos detallados de cada piloto, utilizando las librerías FastF1 y Arcade para la obtención y renderizado de datos.",
+            badges: ["Python"],
+            buttons: [
+                { text: "GitHub", href: "https://github.com/SCrbnll/F1Telemetry", icon: GitHubIcon }
+            ]
+        },
+        {
             img: "https://raw.githubusercontent.com/SCrbnll/GearNote/refs/heads/main/assets/images/app_banner.png",
             title: "GearNote",
             description: "Aplicación móvil que te permite llevar un registro completo del mantenimiento de tus vehículos.",
@@ -66,6 +75,15 @@ export const PROJECTS = {
         }
     ],
     en: [
+        {
+            img: "https://github.com/SCrbnll/F1Telemetry/blob/main/assets/app_banner.png?raw=true",
+            title: "F1 Telemtry",
+            description: "F1 Telemetry HUD is an interactive Python application for visualizing real-time Formula 1 telemetry data. It allows users to replay sessions with a dynamic HUD that displays in-lap positions, live classification, tyre status, and detailed pilot data, using the FastF1 and Arcade libraries for data acquisition and rendering.",
+            badges: ["Python"],
+            buttons: [
+                { text: "GitHub", href: "https://github.com/SCrbnll/F1Telemetry", icon: GitHubIcon }
+            ]
+        },
         {
             img: "https://raw.githubusercontent.com/SCrbnll/GearNote/refs/heads/main/assets/images/app_banner.png",
             title: "GearNote",

@@ -7,6 +7,7 @@ export const TECHNOLOGIES = [
     { name: "Node.js", icon: "node.js", color: "3C873A", category: "backend" },
     { name: "PHP", icon: "php", color: "777BB4", category: "backend" },
     { name: "Laravel", icon: "laravel", color: "FF2D20", category: "backend" },
+    { name: "Python", icon: "python", color: "3776AB", category: "backend" },
     
     // BD
     { name: "MySQL", icon: "mysql", color: "00000F", category: "database" },
