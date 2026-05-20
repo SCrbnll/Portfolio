@@ -19,8 +19,8 @@ export const STATS = {
       align: "end",
       items: [
         {
-          title: "FP Superior en Desarrollo de Aplicaciones Multiplataforma",
-          value: "2022-2024",
+          title: "FP Superior en Desarrollo de Aplicaciones Web",
+          value: "2024-2025",
         },
         {
           title: "FP Superior en Desarrollo de Aplicaciones Multiplataforma",
